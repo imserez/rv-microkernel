@@ -31,13 +31,6 @@ typedef unsigned char uint8_t;
 typedef unsigned int uint32_t;
 typedef uint32_t size_t;
 
-void *memset(void *buf, char c, size_t n) {
-    uint8_t *p = (uint8_t *) buf;
-    while (n--)
-        *p++ = c;
-    return buf;
-}
-
 void kernel_main(void) {
     printf("\n\nHello %s\n", "World!");
     printf("1 + 2 = %d\n", 1 + 2);
