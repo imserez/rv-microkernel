@@ -2,6 +2,7 @@
 
 # include "common.h"
 
+#define USER_BASE 0x1000000
 
 #include "common.h"
 
@@ -70,7 +71,7 @@ struct sbiret {
 
 #define PROC_UNUSED   0   // Unused process control structure
 #define PROC_RUNNABLE 1   // Runnable process
-
+#define PROC_EXITED   2
 struct process {
     int pid;                // Process ID
     int state;              // Process state: PROC_UNUSED or PROC_RUNNABLE
@@ -86,3 +87,5 @@ struct process {
 #define PAGE_W      (1 << 2)
 #define PAGE_X      (1 << 3)
 #define PAGE_U      (1 << 4)
+
+#define SSTATUS_SPIE (1 << 5)
